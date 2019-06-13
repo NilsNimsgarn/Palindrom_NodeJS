@@ -1,0 +1,28 @@
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input="";
+process.stdin.on("data",function(input){
+    stdin_input+=input;
+});
+process.stdin.on("end",function(){
+    main(stdin_input);
+});
+
+
+
+var y=0;    
+var lang=0;
+var erg="";
+function main(input){
+lang=input.length;
+    for(var x = 0; x < lang;x++){
+       if (input.substring(x,x+1)===input.substring(lang-x-1,lang-x)) {
+       y+=1; 
+} 
+if (y==lang){
+        erg="YES"
+    }else {
+        erg="NO"
+    }
+}process.stdout.write(erg+"\n");
+}
